@@ -1,0 +1,23 @@
+---
+name: Ollama
+version: dev
+slug: ollama
+description: Run large language models locally
+url: https://github.com/hassio-addons/addon-ollama
+codenotary: codenotary@frenck.dev
+webui: http://[HOST]:[PORT:11434]
+init: false
+arch:
+  - amd64
+map:
+  - addon_config:rw
+ports:
+  11434/tcp: 11434
+ports_description:
+  11434/tcp: Ollama API
+options:
+  log_level: info
+schema:
+  log_level: list(trace|debug|info|notice|warning|error|fatal)
+environment:
+  LOG_FORMAT: "{LEVEL}: {MESSAGE}"

@@ -1,0 +1,13 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Ollama
+# Runs Ollama
+# ==============================================================================
+bashio::log.info 'Starting Ollama...'
+
+# Set the host to listen on all interfaces
+export OLLAMA_HOST=0.0.0.0
+
+# Run Ollama
+exec /usr/bin/ollama serve

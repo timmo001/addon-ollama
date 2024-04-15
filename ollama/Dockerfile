@@ -8,6 +8,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 ARG OLLAMA_VERSION=v0.1.31
 
+ARG BUILD_ARCH=amd64
+ARG BUILD_VERSION=dev
+
 # hadolint ignore=DL3042
 RUN \
     curl \
@@ -19,13 +22,11 @@ RUN \
 COPY rootfs /
 
 # Build arguments
-ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_DESCRIPTION
 ARG BUILD_NAME
 ARG BUILD_REF
 ARG BUILD_REPOSITORY
-ARG BUILD_VERSION
 
 # Labels
 LABEL \

@@ -1,13 +1,13 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: Lidarr
-# Take down the S6 supervision tree when Lidarr fails
+# Home Assistant Community Add-on: Ollama
+# Take down the S6 supervision tree when Ollama fails
 # ==============================================================================
 readonly exit_code_container=$(</run/s6-linux-init-container-results/exitcode)
 readonly exit_code_service="${1}"
 readonly exit_code_signal="${2}"
-readonly service="Lidarr"
+readonly service="Ollama"
 
 bashio::log.info \
   "Service ${service} exited with code ${exit_code_service}" \
